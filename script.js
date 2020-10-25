@@ -8,14 +8,14 @@ async function submitPost(e){
 
     const options = {
         method: "POST",
-        body: {title: title, body: body},
+        body: JSON.stringify({title: title, body: body}),
         headers: new Headers({
             "Content-Type": "application/json"
         })
     };
 
     const postPromise = await fetch("https://jsonplaceholder.typicode.com/posts", options);
-
+    console.log(postPromise)
     if(postPromise.ok){
         const post = await postPromise.json();
 
