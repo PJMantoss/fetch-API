@@ -26,8 +26,8 @@ async function submitPost(e){
         body = `Status: ${postPromise.status}`;
     }
 
-    document.querySelector(".card-title").innerHTML = title;
-    document.querySelector(".card-text").innerHTML = body;
+    document.querySelector(".card-title").innerText = title;
+    document.querySelector(".card-text").innerText = body;
 
     document.getElementById("fetchForm").reset();
 }
