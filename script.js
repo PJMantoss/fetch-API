@@ -22,7 +22,12 @@ async function submitPost(e){
         title = post.title;
         body = post.body;
     }else {
-        title = "Error",
-        body = `Status: ${postPromise.status}`
+        title = "Error";
+        body = `Status: ${postPromise.status}`;
     }
+
+    document.querySelector(".card-title").innerHTML = title;
+    document.querySelector(".card-text").innerHTML = body;
+
+    document.getElementById("fetchForm").reset();
 }
