@@ -14,5 +14,15 @@ async function submitPost(e){
         })
     };
 
-    const postPromise = await fetch("https://jsonplaceholder.typicode.com/posts", options)
+    const postPromise = await fetch("https://jsonplaceholder.typicode.com/posts", options);
+
+    if(postPromise.ok){
+        const post = await postPromise.json();
+
+        title = post.title;
+        body = post.body;
+    }else {
+        title = "Error",
+        body = `Status: ${postPromise.status}`
+    }
 }
